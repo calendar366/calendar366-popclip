@@ -9,9 +9,9 @@ identifier: com.nspektor.calendar366.popclip
 description: Create an event or task in Calendar 366 from the selected text.
 keywords: calendar event task appointment reminder
 
-# Shown in the extensions directory and in PopClip's extension list; the two
-# actions keep their own symbols in the popup bar. PopClip uses the image as a
-# monochrome mask, hence the plain white glyph on a transparent background.
+# Used for the button in the popup bar (see the submenu below) and shown in the
+# extensions directory and in PopClip's extension list. PopClip draws the image
+# as a monochrome mask, hence the plain white glyph on a transparent background.
 icon: AppIcon.png
 
 # 4225 = PopClip 2023.9, the first build supporting the "clean query" flag
@@ -24,40 +24,47 @@ excluded apps:
   - com.nspektor.Calendar366.3.Mini
 
 actions:
-  - title:
-      en: New Event
-      da: Ny begivenhed
-      de: Neuer Termin
-      es: Nuevo evento
-      fr: Nouvel événement
-      it: Nuovo evento
-      nl: Nieuwe afspraak
-      pt-br: Novo evento
-    icon: symbol:plus.circle
-    url: cal366://add?type=event&query=***
-    # collapse newlines and runs of whitespace, otherwise a multi-line
-    # selection would end up as a title containing line breaks
-    clean query: true
-    # An event is only stored if a date or time was recognised, so only offer
-    # the button when the selection plausibly contains one: a clock time, a
-    # numeric date, or a weekday / relative-day word in one of the languages
-    # this extension is translated into. The pattern is wrapped in ^.*...*$
-    # on purpose - PopClip passes only the matched substring to the action,
-    # so the match has to span the whole selection to keep the title intact.
-    regex: |-
-      (?is)^.*(\d{1,2}\s*[:.]\s*\d{2}|\d{1,2}\s*[ap]\.?m\.?|\d{1,2}\s*[./-]\s*\d{1,2}|\b(today|tonight|tomorrow|monday|tuesday|wednesday|thursday|friday|saturday|sunday|heute|morgen|übermorgen|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|sonntag|i dag|idag|imorgen|overmorgen|mandag|tirsdag|onsdag|torsdag|fredag|lørdag|søndag|vandaag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|hoy|mañana|lunes|martes|miércoles|miercoles|jueves|viernes|sábado|sabado|domingo|aujourd|demain|lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche|oggi|domani|dopodomani|lunedì|lunedi|martedì|martedi|mercoledì|mercoledi|giovedì|giovedi|venerdì|venerdi|sabato|domenica|hoje|amanhã|amanha|segunda-feira|terça-feira|terca-feira|quarta-feira|quinta-feira|sexta-feira)\b).*$
+  # Both actions sit in a submenu, so the popup bar shows a single button with
+  # the app icon instead of two generic plus symbols. PopClip still evaluates
+  # each child's regex individually, so "New Event" only turns up inside the
+  # submenu when the selection qualifies - and the parent button stays visible
+  # as long as one child remains, which "New Task" always does.
+  - title: Calendar 366
+    submenu:
+      - title:
+          en: New Event
+          da: Ny begivenhed
+          de: Neuer Termin
+          es: Nuevo evento
+          fr: Nouvel événement
+          it: Nuovo evento
+          nl: Nieuwe afspraak
+          pt-br: Novo evento
+        icon: symbol:plus.circle
+        url: cal366://add?type=event&query=***
+        # collapse newlines and runs of whitespace, otherwise a multi-line
+        # selection would end up as a title containing line breaks
+        clean query: true
+        # An event is only stored if a date or time was recognised, so only offer
+        # the button when the selection plausibly contains one: a clock time, a
+        # numeric date, or a weekday / relative-day word in one of the languages
+        # this extension is translated into. The pattern is wrapped in ^.*...*$
+        # on purpose - PopClip passes only the matched substring to the action,
+        # so the match has to span the whole selection to keep the title intact.
+        regex: |-
+          (?is)^.*(\d{1,2}\s*[:.]\s*\d{2}|\d{1,2}\s*[ap]\.?m\.?|\d{1,2}\s*[./-]\s*\d{1,2}|\b(today|tonight|tomorrow|monday|tuesday|wednesday|thursday|friday|saturday|sunday|heute|morgen|übermorgen|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|sonntag|i dag|idag|imorgen|overmorgen|mandag|tirsdag|onsdag|torsdag|fredag|lørdag|søndag|vandaag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag|zondag|hoy|mañana|lunes|martes|miércoles|miercoles|jueves|viernes|sábado|sabado|domingo|aujourd|demain|lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche|oggi|domani|dopodomani|lunedì|lunedi|martedì|martedi|mercoledì|mercoledi|giovedì|giovedi|venerdì|venerdi|sabato|domenica|hoje|amanhã|amanha|segunda-feira|terça-feira|terca-feira|quarta-feira|quinta-feira|sexta-feira)\b).*$
 
-  # A task does not need a due date - it simply lands in the list without one,
-  # so this button stays available for any selection.
-  - title:
-      en: New Task
-      da: Ny opgave
-      de: Neue Aufgabe
-      es: Nueva tarea
-      fr: Nouvelle tâche
-      it: Nuova attività
-      nl: Nieuwe taak
-      pt-br: Nova tarefa
-    icon: symbol:plus.square
-    url: cal366://add?type=task&query=***
-    clean query: true
+      # A task does not need a due date - it simply lands in the list without one,
+      # so this button stays available for any selection.
+      - title:
+          en: New Task
+          da: Ny opgave
+          de: Neue Aufgabe
+          es: Nueva tarea
+          fr: Nouvelle tâche
+          it: Nuova attività
+          nl: Nieuwe taak
+          pt-br: Nova tarefa
+        icon: symbol:plus.square
+        url: cal366://add?type=task&query=***
+        clean query: true

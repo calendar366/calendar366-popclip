@@ -2,20 +2,21 @@
 
 Turns selected text into an event or a task in [Calendar 366](https://calendar366.com).
 
-Select some text anywhere on your Mac and click one of the two buttons:
+Select some text anywhere on your Mac and click the Calendar 366 button in the
+PopClip bar. Two entries open up:
 
-| Button | Action |
+| Entry | Action |
 |---|---|
-| ⊕ (circle) | Create an **event** from the selection |
-| ⊞ (square) | Create a **task** from the selection |
+| New Event | Create an **event** from the selection |
+| New Task | Create a **task** from the selection |
 
 The entry is created straight away — no window opens, no confirmation is needed.
 
-The event button only shows up when the selection contains something that looks
-like a date or a time: a clock time, a numeric date, a weekday, or a word such as
-“today” or “tomorrow”. An event without a date would have nothing to be filed
-under, so the button stays out of the way. The task button is always available —
-a task without a due date simply lands in your list.
+“New Event” only shows up when the selection contains something that looks like a
+date or a time: a clock time, a numeric date, a weekday, or a word such as “today”
+or “tomorrow”. An event without a date would have nothing to be filed under, so the
+entry stays out of the way. “New Task” is always available — a task without a due
+date simply lands in your list.
 
 ## Requirements
 

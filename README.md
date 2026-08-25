@@ -16,7 +16,7 @@ A PopClip extension that turns selected text into an event or a task in [Calenda
 * Attach a web address as a link and a phone number to the notes
 * Take whatever follows the date as the location
 
-The entry is created straight away — no window opens, no confirmation is needed. The event button only appears when the selection contains something that looks like a date or a time, because an event without one has nothing to be filed under. The task button is always available, since a task without a due date simply lands in your list.
+Both entries sit behind a single Calendar 366 button in the PopClip bar. The entry is created straight away — no window opens, no confirmation is needed. “New Event” only appears when the selection contains something that looks like a date or a time, because an event without one has nothing to be filed under. “New Task” is always available, since a task without a due date simply lands in your list.
 
 ## Natural Language
 

@@ -9,6 +9,11 @@ identifier: com.nspektor.calendar366.popclip
 description: Create an event or task in Calendar 366 from the selected text.
 keywords: calendar event task appointment reminder
 
+# Shown in the extensions directory and in PopClip's extension list; the two
+# actions keep their own symbols in the popup bar. PopClip uses the image as a
+# monochrome mask, hence the plain white glyph on a transparent background.
+icon: AppIcon.png
+
 # 4225 = PopClip 2023.9, the first build supporting the "clean query" flag
 popclip version: 4225
 macos version: "14.6"

@@ -4,9 +4,8 @@ A PopClip extension that turns selected text into an event or a task in [Calenda
 
 ## Getting Started
 
-1. Install the extension from the PopClip Extensions directory, or download the latest release from the Releases section of this repository.
-2. Open the downloaded `Calendar 366.popclipext` package. PopClip will install it automatically.
-3. Ensure Calendar 366 is installed on the same Mac.
+1. Install the extension from its page in the PopClip Extensions directory. PopClip takes care of the download and of future updates.
+2. Ensure Calendar 366 is installed on the same Mac.
 
 ## Capabilities
 
@@ -49,7 +48,7 @@ A selection consisting of a single word cannot be interpreted and opens an empty
 
 ## Data Handling
 
-The extension hands the selected text to Calendar 366 entirely on-device, through the app's `cal366://` URL scheme. The text is never transmitted to a server operated by us.
+The extension hands the selected text to Calendar 366 entirely on-device, through the app's `cal366://` URL scheme. The text never leaves your Mac.
 
 ## About This Repository
 

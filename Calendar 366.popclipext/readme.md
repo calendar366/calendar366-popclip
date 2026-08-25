@@ -53,3 +53,7 @@ the notes. Anything left over after the date is taken as the location.
 
 A selection consisting of a single word cannot be interpreted and opens an empty
 editor instead — select at least two words.
+
+## Credits
+
+By Vincent Miethe — [calendar366.com](https://calendar366.com)

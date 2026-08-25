@@ -1,0 +1,4 @@
+# Tells the PopClip Extensions Directory which packages to read from this
+# repository. Must sit in the root of the tagged commit.
+include: "*.popclipext"
+versionPrefix: v

@@ -52,8 +52,11 @@ the notes. Anything left over after the date is taken as the location.
 
 ## Note
 
-A selection consisting of a single word cannot be interpreted and opens an empty
-editor instead — select at least two words.
+A selection that contains only a date or a time leaves nothing for a title. In that
+case Calendar 366 opens the editor on that date instead of creating the entry.
+
+Any other single word cannot be interpreted and opens an empty editor instead —
+select at least two words.
 
 ## Credits
 

@@ -36,12 +36,14 @@ app understands. Everything in front of the first recognised token becomes the t
 | `Team sync friday 10:00 -a15m -r1w` | Weekly event with an alert 15 minutes before |
 | `Call the landlord !!` | Task with medium priority |
 | `Groceries /Home` | Task in the list whose name starts with “Home” |
+| `Review slides friday 14:00 #Work` | Event with the category “Work” |
 
 ### Tokens
 
 | Token | Meaning |
 |---|---|
 | `/Name` | Target calendar (events) or list (tasks). Matches the first visible one whose name starts with `Name`. |
+| `#Name` | Category of the target calendar's account. Matches the category named `Name`, otherwise the first one whose name starts with it; spaces in the name are left out (`#WorkPrivate`). Microsoft and CalDAV accounts take several. |
 | `-30` | Duration in minutes. Events only, needs a space in front of it. |
 | `-a30m`, `-a2h`, `-a1d` | Alert 30 minutes / 2 hours / 1 day before. Events only, can be used more than once. |
 | `-r1d`, `-r2w`, `-r1m`, `-r1y` | Repeats every 1 day / 2 weeks / 1 month / 1 year. |
